@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Azimbek",
+        "lastname": "Alibekov",
+        "age": 20,
+        "id": 1
+    },
+    {
+        "name": "Oybek",
+        "lastname": "Bekmirzayev",
+        "age": 546,
+        "id": 2
+    }
+]
