@@ -1,0 +1,53 @@
+.Modal {
+    width: 550px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    background-color: #2d2d2d;
+}
+
+input {
+    width: 420px;
+    padding-left: 10px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.section {
+    position: relative;
+}
+
+.radio {
+    width: 100px;
+    display: block;
+    margin-top: 4rem;
+    box-sizing: border-box;
+}
+
+.male, .female {
+    display: flex;
+    width: 190px;
+    height: 100px;
+    font-size: 30px;
+    border-radius: 20px;
+    background-color: black;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+}
+
+.gender-flex {
+    width: 420px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

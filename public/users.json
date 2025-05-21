@@ -1,14 +1,18 @@
-[
-    {
-        "name": "Azimbek",
-        "lastname": "Alibekov",
-        "age": 20,
-        "id": 1
-    },
-    {
-        "name": "Oybek",
-        "lastname": "Bekmirzayev",
-        "age": 546,
-        "id": 2
-    }
-]
+{
+    "Users": [
+        {
+            "id": 1,
+            "name": "Azimbek",
+            "lastname": "Alibekov",
+            "age": 20,
+            "gender": "male"
+        },
+        {
+            "id": 2,
+            "name": "Oybek",
+            "lastname": "Bekmirzayev",
+            "age": 546,
+            "gender": "male"
+        }
+    ]
+}
