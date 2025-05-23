@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "2",
+      "name": "Oybek",
+      "lastname": "Bekmirzayev",
+      "age": 546,
+      "gender": "male"
+    },
+    {
+      "0": {
+        "name": "sa",
+        "lastname": "sf",
+        "age": "sdfg",
+        "gender": "male",
+        "id": 1
+      },
+      "id": "9091"
+    },
+    {
+      "id": 1,
+      "name": "asfasdf",
+      "lastname": "asdfasdf",
+      "age": "asdfasdf",
+      "gender": "male"
+    }
+  ]
+}

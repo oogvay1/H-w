@@ -1,6 +1,6 @@
 import './Header.css'
 
-function Header() {
+function Header( { search, setSearch } ) {
 
     return (
         <>
@@ -18,7 +18,7 @@ function Header() {
                         </ul>
                     </div>
                     <div className="input">
-                        <input type="text" />
+                        <input placeholder='Search for users' onChange={(e) => setSearch(e.target.value)} value={search} type="text" />
                     </div>
                 </nav>
             </div>

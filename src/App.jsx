@@ -8,7 +8,8 @@ function App() {
 
   const [users, setUsers] = useState([]);
   const [esc, setEsc] = useState(false);
-  
+  const [find, setFind] = useState('');
+
   const newUser = {
     name: "",
     lastname: "",
@@ -16,17 +17,13 @@ function App() {
     gender: "",
     id: users.length + 1
   };
-  
+
   const [form, setForm] = useState(newUser);
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
   };
-
-  useEffect(() => {
-    console.log(form)
-  }, [form]);
 
 
   function addUser() {
@@ -46,13 +43,23 @@ function App() {
         .then(res => res)
         .catch(err => console.error("Server error:", err));
 
-      setForm({ name: "", lastname: "", age: "", gender: "", id: users.length + 1 });
+      setForm(newUser);
     }
   }
 
 
   function deleteUserById(id) {
     setUsers(prev => prev.filter(user => user.id !== id));
+  }
+
+  function changeUser(id, newName) {
+    if (!newName) return;
+
+    const updatedUsers = users.map(user =>
+      user.id === id ? { ...user, name: newName } : user
+    );
+
+    setUsers(updatedUsers);
   }
 
   useEffect(() => {
@@ -69,28 +76,39 @@ function App() {
   }, []);
 
 
+  if(find) {
+    console.log(find)
+  }
+
   return (
     <>
-      <Header />
-      {(esc && <h1>True</h1>) || <h1>False</h1>}
+      <Header search={find} setSearch={setFind} />
+
       <main>
-        <button onClick={addUser}>Add User</button>
-        <ul>
-          {
-            (users.length <= 0 && (<p>No users</p>) ||
-              users.map(user => (
-                <li className='li' key={user.id}>
-                  <p>{user.name}</p>
-                  <p>{user.lastname}</p>
-                  <p>{user.age}</p>
-                  <p>{user.gender}</p>
-                  <button onClick={() => deleteUserById(user.id)}>Delete</button>
-                </li>
-              ))
-            )
-          }
-        </ul>
+        <div className="container">
+          <button onClick={addUser}>Add User</button>
+          <ul>
+            {
+              (users.length <= 0 && (<p>No users</p>) ||
+                users
+                  .filter(user =>
+                    user.name.toLowerCase().includes(find.toLowerCase())
+                  ).map(user => (
+                    <li className='li' key={user.id}>
+                      <p>{user.name}</p>
+                      <p>{user.lastname}</p>
+                      <p>{user.age}</p>
+                      <p>{user.gender}</p>
+                      <button onClick={() => deleteUserById(user.id)}>Delete</button>
+                      <button onClick={() => changeUser(user.id, prompt('Enter new User name'))}>Change</button>
+                    </li>
+                  ))
+              )
+            }
+          </ul>
+        </div>
       </main>
+
       {(esc && <Modal add={addUser} form={handleChange} ne={form} />) || null}
     </>
   );

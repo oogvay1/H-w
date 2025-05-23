@@ -15,16 +15,53 @@ ul {
     flex-wrap: wrap;
 }
 
+main ul {
+    margin-top: 10rem;
+}
+
+button {
+    width: 180px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(to right,
+            #1D4E89,
+            #4A8A99,
+            #FF6F3C,
+            #F8B0A2,
+            #FF007F,
+            #D29CFC,
+            #00B8D9,
+            #00578a);
+    background-position: 0;
+    background-size: 300px;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+button:hover {
+    scale: 1.05;
+}
+
+button:active {
+    scale: .96;
+}
+
 .li {
     max-width: 300px;
     font-size: 20px;
     width: 300px;
     height: 200px;
     padding: 20px;
-    background-color: blue;
+    border-radius: 15px;
+    border: 2px solid rgb(173, 173, 173);
+    transition: all .2s ease-in-out;
+    background-color: rgb(105, 105, 105);
 }
 
 input {
-    width: 200px;
+    width: 180px;
     height: 40px;
 }
